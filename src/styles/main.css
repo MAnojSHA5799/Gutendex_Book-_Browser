@@ -1,3 +1,35 @@
+/* Color Variables */
+:root {
+  --primary: #5E56E7;
+  --background: #F8F7FF;
+  --grey-light: #F0F0F6;
+  --grey-medium: #A0A0A0;
+  --grey-dark: #333333;
+  --shadow: rgba(211, 209, 238, 0.5);
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: var(--grey-dark);
+  background-color: var(--background);
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -68,11 +100,11 @@
 
 .book-card {
   position: relative;
-  height: 100%;
-  width: 100%;
+  width: 114px;
+  height: 162px;
   border-radius: 8px;
+  box-shadow: 0 2px 5px 0 var(--shadow);
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
 
@@ -80,11 +112,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.book-card:hover .book-cover {
-  transform: scale(1.05);
 }
 
 .book-info {
@@ -92,17 +119,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
+  padding: 8px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
   color: white;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
 }
 
 .book-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 0 4px 0;
   line-height: 1.2;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -112,7 +138,9 @@
 }
 
 .book-author {
-  font-size: 0.875rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
   margin: 0;
   opacity: 0.8;
   display: -webkit-box;
@@ -194,54 +222,55 @@
 .search-input-wrapper {
   position: relative;
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .search-icon {
   position: absolute;
-  left: 16px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #666;
+  color: var(--grey-medium);
   pointer-events: none;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px 40px 12px 44px; /* Left padding for search icon, right for clear button */
+  height: 40px;
+  padding: 0 40px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  color: #333;
+  font-weight: 400;
+  border: 1px solid var(--grey-light);
+  border-radius: 4px;
+  color: var(--grey-dark);
   background-color: #fff;
   outline: none;
   transition: all 0.3s ease;
 }
 
 .search-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-color: var(--primary);
+  box-shadow: 0 2px 5px 0 var(--shadow);
 }
 
 .search-input::placeholder {
-  color: #aaa;
+  color: var(--grey-medium);
 }
 
 .search-clear-button {
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   padding: 8px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
+  color: var(--grey-medium);
   opacity: 0.6;
   transition: opacity 0.2s ease;
-  border-radius: 50%;
 }
 
 .search-clear-button:hover {
@@ -453,7 +482,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%); */
+  background-color: #F8F7FF;  /* Light purple background */
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -470,10 +499,10 @@
 .title-section {
   position: sticky;
   top: 0;
-  background: rgba(245, 247, 250, 0.75);
+  background: rgba(248, 247, 255, 0.75);
   backdrop-filter: blur(8px);
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
+  padding: 24px;
+  margin-bottom: 24px;
   z-index: 1000;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -541,13 +570,14 @@
 /* Books Grid */
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(114px, 1fr));
+  gap: 24px;
+  padding: 24px;
 }
 
 .book-item {
-  aspect-ratio: 2/3;
+  display: flex;
+  justify-content: center;
 }
 
 /* Loading States */

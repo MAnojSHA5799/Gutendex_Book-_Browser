@@ -624,3 +624,23 @@
 .book-list-wrapper::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
 } 
+
+
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333; /* Ensures text is visible */
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+

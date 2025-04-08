@@ -27,16 +27,14 @@ const BookCard = ({ book }) => {
   return (
     <div className="book-card-wrapper" onClick={handleClick}>
       <div className="book-card">
-        <div className="book-image-container">
-          <img
-            src={book.formats['image/jpeg']}
-            alt={book.title}
-            className="book-image"
-            onError={(e) => {
-              e.target.src = 'https://via.placeholder.com/300x400?text=No+Image';
-            }}
-          />
-        </div>
+        <img
+          src={book.formats['image/jpeg']}
+          alt={book.title}
+          className="book-cover"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/300x400?text=No+Image';
+          }}
+        />
         <div className="book-info">
           <h3 className="book-title">{book.title}</h3>
           <p className="book-author">

@@ -3,19 +3,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GenreSelection from './pages/GenreSelection';
 import BookList from './pages/BookList';
 import './styles/main.css';
+import './styles/gutenberg.css';
 
 function App() {
   return (
-    <Router>
-      <div className="app-container fade-in min-vh-100 d-flex align-items-center justify-content-center">
-        <div className="w-100">
+    <>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <div className="app-root">
+        <Router>
           <Routes>
             <Route path="/" element={<GenreSelection />} />
             <Route path="/books/:genre" element={<BookList />} />
           </Routes>
-        </div>
+        </Router>
       </div>
-    </Router>
+    </>
   );
 }
 

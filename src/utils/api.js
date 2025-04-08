@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://skunkworks.ignitesol.com:8000';
+const BASE_URL = 'https://skunkworks.ignitesol.com:8000';
 
 export const fetchBooks = async ({
   topic,
